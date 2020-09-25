@@ -6,6 +6,7 @@ Learning Image-adaptive 3D Lookup Tables for High Performance Photo Enhancement 
 
 
 ### Citation
+```
 @article{li2016local,
   title={Learning Image-adaptive 3D Lookup Tables for High Performance Photo Enhancement in Real-time},
   author={Zeng, Hui and Cai, Jianrui and Li, Lida and Cao, Zisheng and Zhang, Lei},
@@ -16,3 +17,4 @@ Learning Image-adaptive 3D Lookup Tables for High Performance Photo Enhancement 
   year={2020},
   publisher={IEEE}
 }
+```
