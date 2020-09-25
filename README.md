@@ -1,5 +1,6 @@
 # Image-Adaptive-3DLUT
 Learning Image-adaptive 3D Lookup Tables for High Performance Photo Enhancement in Real-time
+### [Paper](https://www4.comp.polyu.edu.hk/~cslzhang/paper/PAMI_LUT.pdf), [Supplementary](https://www4.comp.polyu.edu.hk/~cslzhang/paper/Supplement_LUT.pdf)
 
 
 <img src="figures/framework2.png" width="1024px"/> 
