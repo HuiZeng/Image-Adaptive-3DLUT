@@ -12,11 +12,16 @@ Recent years have witnessed the increasing popularity of learning based methods 
 <img src="figures/framework2.png" width="1024px"/> 
 
 ## Usage
+
+### Requirements
+
+### Build
+
 ### Training
 
 ### Testing
 
-### Citation
+## Citation
 ```
 @article{zeng2020lut,
   title={Learning Image-adaptive 3D Lookup Tables for High Performance Photo Enhancement in Real-time},
