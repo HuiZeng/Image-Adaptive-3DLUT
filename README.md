@@ -11,6 +11,10 @@ Recent years have witnessed the increasing popularity of learning based methods 
 ## Framework
 <img src="figures/framework2.png" width="1024px"/> 
 
+## Usage
+### Training
+
+### Testing
 
 ### Citation
 ```
