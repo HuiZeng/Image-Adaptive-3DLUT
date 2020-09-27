@@ -8,17 +8,6 @@ import numpy as np
 import math
 from trilinear._ext import trilinear
 
-
-def weights_init_normal(m):
-    classname = m.__class__.__name__
-    if classname.find("Conv") != -1:
-        #torch.nn.init.normal_(m.weight.data, 0.0, 0.02)
-        torch.nn.init.xavier_normal_(m.weight.data, 0.01)
-
-    elif classname.find("BatchNorm2d") != -1 or classname.find("InstanceNorm2d") != -1:
-        torch.nn.init.normal_(m.weight.data, 1.0, 0.02)
-        torch.nn.init.constant_(m.bias.data, 0.0)
-
 def weights_init_normal_classifier(m):
     classname = m.__class__.__name__
     if classname.find("Conv") != -1:
@@ -27,29 +16,6 @@ def weights_init_normal_classifier(m):
     elif classname.find("BatchNorm2d") != -1 or classname.find("InstanceNorm2d") != -1:
         torch.nn.init.normal_(m.weight.data, 1.0, 0.02)
         torch.nn.init.constant_(m.bias.data, 0.0)
-
-class vgg16(nn.Module):
-
-    def __init__(self):
-        super(vgg16, self).__init__()
-
-        vgg = models.vgg16(pretrained=True)
-
-        self.upsample = nn.Upsample(size=(224,224),mode='bilinear')
-        self.normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-        self.feature = nn.Sequential(vgg.features,nn.AvgPool2d(kernel_size=(7,7)))
-        #self.feature4 = nn.Sequential(vgg.features[23:30])
-        #self.feature5 = nn.Sequential(vgg.features[30:])
-
-
-    def forward(self, x):
-
-        x = self.upsample(x)
-        x = x.squeeze(0)
-        x = self.normalize(x.cpu()).cuda().unsqueeze(0)
-        f = self.feature(x)
-
-        return f
 
 class resnet18_224(nn.Module):
 
@@ -281,26 +247,6 @@ class Classifier_unpaired(nn.Module):
     def forward(self, img_input):
         return self.model(img_input)
 
-class Generator3DLUT(nn.Module):
-    def __init__(self, dim=33):
-        super(Generator3DLUT, self).__init__()
-
-        file = open("IdentityLUT33.txt",'r')
-        LUT = file.readlines()
-        self.LUT = torch.zeros([len(LUT)*3], dtype=torch.float)
-
-        for i in range(0,len(LUT)):
-            x = LUT[i].split()
-            self.LUT[i] = float(x[0])
-            self.LUT[i + len(LUT)] = float(x[1])
-            self.LUT[i + len(LUT)*2] = float(x[2])
-        self.LUT = nn.Parameter(torch.tensor(self.LUT))
-        self.TrilinearInterpolation = TrilinearInterpolation()
-
-
-    def forward(self, x):
-
-        return self.TrilinearInterpolation(self.LUT, x)
 
 class Generator3DLUT_identity(nn.Module):
     def __init__(self, dim=33):
