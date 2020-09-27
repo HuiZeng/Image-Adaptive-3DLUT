@@ -14,9 +14,11 @@ Recent years have witnessed the increasing popularity of learning based methods 
 ## Usage
 
 ### Requirements
+Python3, requirements.txt
 
 ### Build
-
+cd trilinear
+sh make.sh
 ### Training
 
 ### Testing
