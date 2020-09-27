@@ -17,8 +17,8 @@ Recent years have witnessed the increasing popularity of learning based methods 
 Python3, requirements.txt
 
 ### Build
-cd trilinear
-sh make.sh
+    cd trilinear
+    sh make.sh
 ### Training
 
 ### Testing
