@@ -27,11 +27,11 @@ Python3, requirements.txt
 ### Evaluation
 1. use python to generate and save the test image:
 
-     python3 image_adaptive_lut_evaluation.py
+       python3 image_adaptive_lut_evaluation.py
      
 2. use matlab to calculate the indexes used in our paper:
 
-     average_psnr_ssim.m
+       average_psnr_ssim.m
      
 ## Citation
 ```
