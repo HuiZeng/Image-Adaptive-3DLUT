@@ -20,9 +20,19 @@ Python3, requirements.txt
     cd trilinear
     sh make.sh
 ### Training
+#### paired training
+     python3 image_adaptive_lut_train_paired.py
+#### unpaired training
 
-### Testing
+### Evaluation
+1. use python to generate and save the test image:
 
+     python3 image_adaptive_lut_evaluation.py
+     
+2. use matlab to calculate the indexes used in our paper:
+
+     average_psnr_ssim.m
+     
 ## Citation
 ```
 @article{zeng2020lut,
