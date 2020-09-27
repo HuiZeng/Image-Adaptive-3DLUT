@@ -1,4 +1,4 @@
-test_path = 'images/LUTs/paired/fiveK_480p_3LUT_sm_1e-4_mn_10_bs1_145';
+test_path = 'images/LUTs/paired/fiveK_480p_3LUT_sm_1e-4_mn_10_sRGB_145';
 gt_path = '../data/fiveK/expertC/JPG/480p';
 path_list = dir(fullfile(test_path,'*.png'));
 img_num = length(path_list);
