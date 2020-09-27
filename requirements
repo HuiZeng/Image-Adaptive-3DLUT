@@ -1,0 +1,5 @@
+numpy==1.19.2
+PIL==6.1.0
+torch==0.4.1
+torchvision==0.2.2
+opencv-python==3.4.3
