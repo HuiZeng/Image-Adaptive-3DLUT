@@ -24,6 +24,8 @@ Python3, requirements.txt
      python3 image_adaptive_lut_train_paired.py
 #### unpaired training
 
+still checking...
+
 ### Evaluation
 1. use python to generate and save the test image:
 
