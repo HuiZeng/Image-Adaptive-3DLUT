@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--epoch", type=int, default=145, help="epoch to load the saved checkpoint")
 parser.add_argument("--dataset_name", type=str, default="fiveK", help="name of the dataset")
 parser.add_argument("--input_color_space", type=str, default="sRGB", help="input color space: sRGB or XYZ")
-parser.add_argument("--model_dir", type=str, default="LUTs/paired/fiveK_480p_3LUT_sm_1e-4_mn_10", help="path to save model")
+parser.add_argument("--model_dir", type=str, default="LUTs/paired/fiveK_480p_3LUT_sm_1e-4_mn_10", help="directory of saved models")
 opt = parser.parse_args()
 opt.model_dir = opt.model_dir + '_' + opt.input_color_space
 
