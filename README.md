@@ -19,8 +19,19 @@ Recent years have witnessed the increasing popularity of learning based methods 
 Python3, requirements.txt
 
 ### Build
+For pytorch 0.4.1:
+
     cd trilinear
     sh make.sh
+    
+For pytorch 1.x:
+
+    cd trilinear_cpp
+    
+specify the CUDA_HOME path, then
+
+    sudo bash setup.sh
+    
 ### Training
 #### paired training
      python3 image_adaptive_lut_train_paired.py
