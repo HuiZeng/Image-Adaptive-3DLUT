@@ -41,7 +41,7 @@ speed can also be tested in above code.
 
 ### Demo 
     
-    python demo_eval.py
+    python3 demo_eval.py
 
 ## Citation
 ```
