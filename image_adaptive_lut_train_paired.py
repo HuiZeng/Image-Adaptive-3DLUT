@@ -31,7 +31,7 @@ parser.add_argument("--lr", type=float, default=0.0001, help="adam: learning rat
 parser.add_argument("--b1", type=float, default=0.9, help="adam: decay of first order momentum of gradient")
 parser.add_argument("--b2", type=float, default=0.999, help="adam: decay of first order momentum of gradient")
 parser.add_argument("--lambda_smooth", type=float, default=0.0001, help="smooth regularization")
-parser.add_argument("--lambda_monotonicity", type=float, default=10.0, help="monotonicity regularization: 10 for sRGB, 100 for XYZ (slightly better)")
+parser.add_argument("--lambda_monotonicity", type=float, default=10.0, help="monotonicity regularization")
 parser.add_argument("--n_cpu", type=int, default=1, help="number of cpu threads to use during batch generation")
 parser.add_argument("--checkpoint_interval", type=int, default=1, help="interval between model checkpoints")
 parser.add_argument("--output_dir", type=str, default="LUTs/paired/fiveK_480p_3LUT_sm_1e-4_mn_10", help="path to save model")
