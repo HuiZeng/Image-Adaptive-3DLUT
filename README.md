@@ -40,7 +40,8 @@ speed can also be tested in above code.
        average_psnr_ssim.m
 
 ### Demo 
-TODO
+    
+    python demo_eval.py
 
 ## Citation
 ```
