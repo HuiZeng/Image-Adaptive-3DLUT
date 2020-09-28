@@ -26,7 +26,8 @@ By default, we use pytorch 0.4.1:
     
 For pytorch 1.x:
 
-    
+The python wrapper in model.py needs to be modified, which will be supported in a few days.
+
 ### Training
 #### paired training
      python3 image_adaptive_lut_train_paired.py
