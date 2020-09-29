@@ -21,7 +21,7 @@ Python3, requirements.txt
 ### Build
 By default, we use pytorch 0.4.1:
 
-    cd trilinear
+    cd trilinear_c
     sh make.sh
     
 For pytorch 1.x:
