@@ -6,7 +6,7 @@ from torch.autograd import Variable
 import torch
 import numpy as np
 import math
-from trilinear._ext import trilinear
+from trilinear_c._ext import trilinear
 
 def weights_init_normal_classifier(m):
     classname = m.__class__.__name__
