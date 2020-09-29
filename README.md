@@ -29,7 +29,7 @@ For pytorch 1.x:
     cd trilinear
     sh setup.sh
     
-Replace import model with model_x in the python codes.
+Please replace ``import model`` with ``import model_x`` in the python codes. Please also change ``result = trilinear_(LUT, img)`` to ``_, result = trilinear_(LUT, img)`` in ``demo_eval.py``.  
 
 ### Training
 #### paired training
