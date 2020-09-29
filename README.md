@@ -26,7 +26,7 @@ By default, we use pytorch 0.4.1:
     
 For pytorch 1.x:
 
-    cd trilinear
+    cd trilinear_cpp
     sh setup.sh
     
 Please replace ``import model`` with ``import model_x`` in the python codes. Please also change ``result = trilinear_(LUT, img)`` to ``_, result = trilinear_(LUT, img)`` in ``demo_eval.py``.  
