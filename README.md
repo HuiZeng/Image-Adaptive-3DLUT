@@ -26,7 +26,10 @@ By default, we use pytorch 0.4.1:
     
 For pytorch 1.x:
 
-The python wrapper in model.py needs to be modified, which will be supported in a few days.
+    cd trilinear
+    sh setup.sh
+    
+Replace import model with model_x in the python codes.
 
 ### Training
 #### paired training
