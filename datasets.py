@@ -169,7 +169,6 @@ class ImageDataset_XYZ(Dataset):
         elif self.mode == "test":
             return len(self.test_input_files)
 
-
 class ImageDataset_sRGB_unpaired(Dataset):
     def __init__(self, root, mode="train", unpaird_data="fiveK"):
         self.mode = mode
@@ -206,13 +205,8 @@ class ImageDataset_sRGB_unpaired(Dataset):
             img_name = os.path.split(self.set1_input_files[index % len(self.set1_input_files)])[-1]
             img_input = Image.open(self.set1_input_files[index % len(self.set1_input_files)])
             img_exptC = Image.open(self.set1_expert_files[index % len(self.set1_expert_files)])
-
-            if self.unpaird_data == "fiveK":
-                seed = random.randint(1,len(self.set2_expert_files))
-                img2 = Image.open(self.set2_expert_files[(index + seed) % len(self.set2_expert_files)])
-            elif self.unpaird_data == "HDR":
-                seed = random.randint(1,len(self.HDR_files))
-                img2 = Image.open(self.HDR_files[(index + seed) % len(self.HDR_files)])
+            seed = random.randint(1,len(self.set2_expert_files))
+            img2 = Image.open(self.set2_expert_files[(index + seed) % len(self.set2_expert_files)])
 
         elif self.mode == "test":
             img_name = os.path.split(self.test_input_files[index % len(self.test_input_files)])[-1]
@@ -221,10 +215,11 @@ class ImageDataset_sRGB_unpaired(Dataset):
             img2 = img_exptC
 
         if self.mode == "train":
-            ratio = np.random.uniform(0.6,1.0)
+            ratio_H = np.random.uniform(0.6,1.0)
+            ratio_W = np.random.uniform(0.6,1.0)
             W,H = img_input._size
-            crop_h = round(H*ratio)
-            crop_w = round(W*ratio)
+            crop_h = round(H*ratio_H)
+            crop_w = round(W*ratio_W)
             W2,H2 = img2._size
             crop_h = min(crop_h,H2)
             crop_w = min(crop_w,W2)
@@ -302,13 +297,8 @@ class ImageDataset_XYZ_unpaired(Dataset):
             img_name = os.path.split(self.set1_input_files[index % len(self.set1_input_files)])[-1]
             img_input = cv2.imread(self.set1_input_files[index % len(self.set1_input_files)],-1)
             img_exptC = Image.open(self.set1_expert_files[index % len(self.set1_expert_files)])
-
-            if self.unpaird_data == "fiveK":
-                seed = random.randint(1,len(self.set2_expert_files))
-                img2 = Image.open(self.set2_expert_files[(index + seed) % len(self.set2_expert_files)])
-            elif self.unpaird_data == "HDR":
-                seed = random.randint(1,len(self.HDR_files))
-                img2 = Image.open(self.HDR_files[(index + seed) % len(self.HDR_files)])
+            seed = random.randint(1,len(self.set2_expert_files))
+            img2 = Image.open(self.set2_expert_files[(index + seed) % len(self.set2_expert_files)])
 
         elif self.mode == "test":
             img_name = os.path.split(self.test_input_files[index % len(self.test_input_files)])[-1]
@@ -319,10 +309,11 @@ class ImageDataset_XYZ_unpaired(Dataset):
         img_input = np.array(img_input)
 
         if self.mode == "train":
-            ratio = np.random.uniform(0.6,1.0)
+            ratio_H = np.random.uniform(0.6,1.0)
+            ratio_W = np.random.uniform(0.6,1.0)
             W,H = img_exptC._size
-            crop_h = round(H*ratio)
-            crop_w = round(W*ratio)
+            crop_h = round(H*ratio_H)
+            crop_w = round(W*ratio_W)
             W2,H2 = img2._size
             crop_h = min(crop_h,H2)
             crop_w = min(crop_w,W2)
