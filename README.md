@@ -35,8 +35,7 @@ Please replace ``from models import *`` with ``from models_x import *`` in the p
 #### paired training
      python3 image_adaptive_lut_train_paired.py
 #### unpaired training
-
-still checking...
+    python3 image_adaptive_lut_train_unpaired.py
 
 ### Evaluation
 1. use python to generate and save the test images:
