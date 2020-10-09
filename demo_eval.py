@@ -7,6 +7,7 @@ from PIL import Image
 
 from models import *
 import torchvision_x_functional as TF_x
+import torchvision.transforms.functional as TF
 
 
 parser = argparse.ArgumentParser()
@@ -66,7 +67,6 @@ def generate_LUT(img):
     
     LUT = pred[0] * LUT0.LUT + pred[1] * LUT1.LUT + pred[2] * LUT2.LUT #+ pred[3] * LUT3.LUT + pred[4] * LUT4.LUT
 
-
     return LUT
 
 
@@ -74,9 +74,13 @@ def generate_LUT(img):
 #  test
 # ----------
 # read image and transform to tensor
-img = cv2.imread(opt.image_path, -1)
-img = np.array(img)
-img = TF_x.to_tensor(img).type(Tensor)
+if opt.input_color_space == 'sRGB':
+    img = Image.open(opt.image_path)
+    img = TF.to_tensor(img).type(Tensor)
+elif opt.input_color_space == 'XYZ':
+    img = cv2.imread(opt.image_path, -1)
+    img = np.array(img)
+    img = TF_x.to_tensor(img).type(Tensor)
 img = img.unsqueeze(0)
 
 LUT = generate_LUT(img)
