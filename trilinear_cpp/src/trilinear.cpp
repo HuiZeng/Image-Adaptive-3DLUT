@@ -9,7 +9,7 @@ int trilinear_forward(torch::Tensor lut, torch::Tensor image, torch::Tensor outp
                       int lut_dim, int shift, float binsize, int width, int height, int batch)
 {
     // Grab the input tensor
-    float * lut_flat = lut.datar<float>();
+    float * lut_flat = lut.data<float>();
     float * image_flat = image.data<float>();
     float * output_flat = output.data<float>();
 
