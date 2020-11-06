@@ -29,7 +29,15 @@ For pytorch 1.x:
     cd trilinear_cpp
     sh setup.sh
     
-Please replace ``from models import *`` with ``from models_x import *`` in the python codes. Please also change ``result = trilinear_(LUT, img)`` to ``_, result = trilinear_(LUT, img)`` in ``demo_eval.py``.  
+Please also replace the following lines:
+```
+# in image_adaptive_lut_train_paired.py, image_adaptive_lut_evaluation.py, demo_eval.py, and image_adaptive_lut_train_unpaired.py
+from models import * --> from models_x import *
+# in demo_eval.py
+result = trilinear_(LUT, img) --> _, result = trilinear_(LUT, img)
+# in image_adaptive_lut_train_paired.py and image_adaptive_lut_evaluation.py
+combine_A = trilinear_(LUT,img) --> _, combine_A = trilinear_(LUT,img)
+```
 
 ### Training
 #### paired training
