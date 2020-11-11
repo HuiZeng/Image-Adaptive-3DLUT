@@ -60,6 +60,14 @@ speed can also be tested in above code.
     
     python3 demo_eval.py
 
+### Tools
+1. You can generate identity 3DLUT with arbitrary dimension by using `utils/generate_identity_3DLUT.py` as follows:
+
+```
+# you can replace 33 with any number you want
+python3 utils/generate_identity_3DLUT.py -d 33
+```
+
 ## Citation
 ```
 @article{zeng2020lut,
