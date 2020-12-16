@@ -138,7 +138,7 @@ class ImageDataset_XYZ(Dataset):
             img_input = cv2.imread(self.test_input_files[index % len(self.test_input_files)],-1)
             img_exptC = Image.open(self.test_expert_files[index % len(self.test_expert_files)])
 
-        img_input = np.array(img_input)
+        img_input = np.array(cv2.cvtColor(img_input,cv2.COLOR_BGR2RGB))
 
         if self.mode == "train":
 
@@ -306,7 +306,7 @@ class ImageDataset_XYZ_unpaired(Dataset):
             img_exptC = Image.open(self.test_expert_files[index % len(self.test_expert_files)])
             img2 = img_exptC
 
-        img_input = np.array(img_input)
+        img_input = np.array(cv2.cvtColor(img_input,cv2.COLOR_BGR2RGB))
 
         if self.mode == "train":
             ratio_H = np.random.uniform(0.6,1.0)
@@ -379,7 +379,7 @@ class ImageDataset_HDRplus(Dataset):
             img_input = cv2.imread(self.test_input_files[index % len(self.test_input_files)],-1)
             img_exptC = Image.open(self.test_expert_files[index % len(self.test_expert_files)])
 
-        img_input = np.array(img_input)
+        img_input = np.array(cv2.cvtColor(img_input,cv2.COLOR_BGR2RGB))
 
         if self.mode == "train":
 
@@ -459,7 +459,7 @@ class ImageDataset_HDRplus_unpaired(Dataset):
             img_exptC = Image.open(self.test_expert_files[index % len(self.test_expert_files)])
             img2 = img_exptC
 
-        img_input = np.array(img_input)
+        img_input = np.array(cv2.cvtColor(img_input,cv2.COLOR_BGR2RGB))
 
         if self.mode == "train":
             ratio = np.random.uniform(0.6,1.0)
