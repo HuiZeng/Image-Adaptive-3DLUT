@@ -68,7 +68,7 @@ speed can also be tested in above code.
 python3 utils/generate_identity_3DLUT.py -d 33
 ```
 
-2. You can visualize the learned 3D LUT by using `utils/visualize_lut.py` as follows:
+2. You can visualize the learned 3D LUT either by using the matlab code in `visualization_lut` or using the python code `utils/visualize_lut.py` as follows:
 
 ```
 python3 utils/visualize_lut.py path/to/your/lut
