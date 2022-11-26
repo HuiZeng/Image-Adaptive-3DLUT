@@ -15,6 +15,9 @@ Recent years have witnessed the increasing popularity of learning based methods 
 
 ## Usage
 
+### Useful issues
+Replace the trilinear interpolation with torch.nn.functional.grid_sample [https://github.com/HuiZeng/Image-Adaptive-3DLUT/issues/14].
+
 ### Requirements
 Python3, requirements.txt
 
