@@ -85,10 +85,18 @@ python3 utils/visualize_lut.py path/to/your/lut --lut_dim 64
   title={Learning Image-adaptive 3D Lookup Tables for High Performance Photo Enhancement in Real-time},
   author={Zeng, Hui and Cai, Jianrui and Li, Lida and Cao, Zisheng and Zhang, Lei},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  volume={},
-  number={},
-  pages={},
-  year={2020},
-  publisher={IEEE}
+  volume={44},
+  number={04},
+  pages={2058--2073},
+  year={2022},
+  publisher={IEEE Computer Society}
+}
+
+@inproceedings{zhang2022clut,
+  title={CLUT-Net: Learning Adaptively Compressed Representations of 3DLUTs for Lightweight Image Enhancement},
+  author={Zhang, Fengyi and Zeng, Hui and Zhang, Tianjun and Zhang, Lin},
+  booktitle={Proceedings of the 30th ACM International Conference on Multimedia},
+  pages={6493--6501},
+  year={2022}
 }
 ```
