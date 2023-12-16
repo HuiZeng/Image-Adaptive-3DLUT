@@ -12,6 +12,8 @@ Recent years have witnessed the increasing popularity of learning based methods 
 
 ## Framework
 <img src="figures/framework2.png" width="1024px"/>
+![image](https://github.com/HuiZeng/Image-Adaptive-3DLUT/assets/16755407/cf3281f8-72e2-4347-837f-0bdb2cb2ebc5)
+
 
 ## Usage
 
